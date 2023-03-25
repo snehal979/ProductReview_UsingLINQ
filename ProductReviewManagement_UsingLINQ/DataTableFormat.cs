@@ -10,6 +10,7 @@ namespace ProductReviewManagement_UsingLINQ
 {
     public class DataTableFormat
     {
+        DataTable productDetailTable = new DataTable("OrderDetail");
         public void TableFormation()
         {
             //DataTable For Add Once
@@ -33,7 +34,7 @@ namespace ProductReviewManagement_UsingLINQ
         public void CreatedDataTable()
         {
             // Define all the columns once.
-            DataTable ProductDetailTable = new DataTable("OrderDetail");
+            
             DataColumn[] col =
             {
                 new DataColumn("ProductId",typeof(Int32)),
@@ -42,15 +43,17 @@ namespace ProductReviewManagement_UsingLINQ
                 new DataColumn("Review", typeof(String)),
                 new DataColumn("IsLike", typeof(bool)),
             };
-            ProductDetailTable.Columns.AddRange(col);
+            productDetailTable.Columns.AddRange(col);
             //Insert data 
-            InsertInformation(ProductDetailTable);
+            InsertInformation();
+            //Display method
+            ShowTable();
         }
         /// <summary>
         /// Uc8 Add data in the table
         /// </summary>
         /// <param name="productDetailTable"></param>
-        public void InsertInformation(DataTable productDetailTable)
+        public void InsertInformation()
         {
             // Use an Object array to insert all the rows .
             // Values in the array are matched sequentially to the columns, based on the order in which they appear in the table.
@@ -74,5 +77,23 @@ namespace ProductReviewManagement_UsingLINQ
                 productDetailTable.Rows.Add(row);
             }
         }
+        /// <summary>
+        /// Uc9 Retrive data
+        /// </summary>
+        /// <param name="table"></param>
+        public void ShowTable()
+        {
+            foreach (DataColumn col in productDetailTable.Columns)
+            {
+                Console.Write(col.ColumnName+" ");
+            }
+            Console.WriteLine();
+
+            foreach (DataRow row in productDetailTable.Rows)
+            {
+                Console.WriteLine("ProductId "+row[0]+" UserId "+row[1]+" Rating "+row[2]+" Review "+row[3]+" IsLike "+row[4]);
+            }
+        }
+       
     }
 }
