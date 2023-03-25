@@ -26,7 +26,7 @@
 
             try
             {
-                Console.WriteLine("1.Display the ProductReview 2.Retrieve top 3 record 3.AllRecord Greater Than 3");
+                Console.WriteLine("1.Display the ProductReview 2.Retrieve top 3 record 3.AllRecord Greater Than 3, 4.Retrive group by ProductId ");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
                 {
@@ -38,6 +38,9 @@
                         break;
                     case 3:
                         productDataMain.RetriveAllRecord();
+                        break;
+                    case 4:
+                        productDataMain.RetriveGroupByProductId();
                         break;
                 }
             }

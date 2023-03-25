@@ -37,6 +37,20 @@ namespace ProductReviewManagement_UsingLINQ
             Display(result.ToList());
         }
         /// <summary>
+        /// Uc 4 RetriveGroupByProductId
+        /// </summary>
+        public void RetriveGroupByProductId()
+        {
+            var result = this.products.GroupBy(x => x.ProductId);
+            foreach (var data in result)
+            {
+                foreach (var item in data)
+                {
+                    Console.WriteLine(item.ProductId);
+                }
+            }
+        }
+        /// <summary>
         /// Display Method
         /// </summary>
         /// <param name="products"></param>
