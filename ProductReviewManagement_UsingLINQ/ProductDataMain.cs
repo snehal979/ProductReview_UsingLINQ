@@ -94,6 +94,14 @@ namespace ProductReviewManagement_UsingLINQ
             Console.WriteLine(result);
         }
         /// <summary>
+        /// uC11 Review contain NICE data retrive
+        /// </summary>
+        public void RetriveReview()
+        {
+            var result = this.products.Where(x => x.Review.Contains("NICE"));
+            Display(result.ToList());
+        }
+        /// <summary>
         /// Display Method
         /// </summary>
         /// <param name="products"></param>
