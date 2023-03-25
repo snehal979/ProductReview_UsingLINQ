@@ -23,6 +23,25 @@
             };
             ProductDataMain productDataMain = new ProductDataMain();
             productDataMain.Addtional(products);
+
+            try
+            {
+                Console.WriteLine("1.Display the ProductReview 2.Retrieve top 3 record ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                switch (num)
+                {
+                    case 1:
+                        productDataMain.Display(products);
+                        break;
+                    case 2:
+                        productDataMain.RetriveTopRecord();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
