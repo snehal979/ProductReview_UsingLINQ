@@ -73,6 +73,18 @@ namespace ProductReviewManagement_UsingLINQ
             }
         }
         /// <summary>
+        /// Uc7 Skip top Five Record rating
+        /// </summary>
+        /// <param name="list"></param>
+        public void SkipTopRecord_ByRating()
+        {
+            var result = this.products.OrderByDescending(x => x.Rating).Skip(5);
+            foreach (var data in result)
+            {
+                Console.WriteLine(data.ProductId);
+            }
+        }
+        /// <summary>
         /// Display Method
         /// </summary>
         /// <param name="products"></param>
