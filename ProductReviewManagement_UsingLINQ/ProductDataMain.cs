@@ -27,6 +27,16 @@ namespace ProductReviewManagement_UsingLINQ
 
         }
         /// <summary>
+        /// Uc3 Management - Retrieve all record from the listwho’s rating are greater then 3 and productID is 1 or 4 or 9 using
+        /// </summary>
+        /// <param name="list"></param>
+        public void RetriveAllRecord()
+        {
+            var result = this.products.Where(x => x.Rating > 3 && (x.ProductId==1||x.ProductId==4||x.ProductId==9));
+            Console.WriteLine(" **RetriveAllRecord*****");
+            Display(result.ToList());
+        }
+        /// <summary>
         /// Display Method
         /// </summary>
         /// <param name="products"></param>

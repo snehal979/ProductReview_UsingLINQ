@@ -26,7 +26,7 @@
 
             try
             {
-                Console.WriteLine("1.Display the ProductReview 2.Retrieve top 3 record ");
+                Console.WriteLine("1.Display the ProductReview 2.Retrieve top 3 record 3.AllRecord Greater Than 3");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
                 {
@@ -35,6 +35,9 @@
                         break;
                     case 2:
                         productDataMain.RetriveTopRecord();
+                        break;
+                    case 3:
+                        productDataMain.RetriveAllRecord();
                         break;
                 }
             }
