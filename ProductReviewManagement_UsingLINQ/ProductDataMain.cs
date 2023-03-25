@@ -51,6 +51,17 @@ namespace ProductReviewManagement_UsingLINQ
             }
         }
         /// <summary>
+        /// Uc5  Retrieve only productId and review from the list for all
+        /// </summary>
+        public void RetriveALLProductId()
+        {
+            var result = this.products.Select(x => new { x.ProductId, x.Review });
+            foreach (var data in result)
+            {
+                Console.WriteLine(data.ProductId);
+            }
+        }
+        /// <summary>
         /// Display Method
         /// </summary>
         /// <param name="products"></param>
