@@ -85,6 +85,15 @@ namespace ProductReviewManagement_UsingLINQ
             }
         }
         /// <summary>
+        /// Uc10 Avergate of rating
+        /// </summary>
+        /// <param name="list"></param>
+        public void AvergaeRating()
+        {
+            var result = this.products.Average(x => x.Rating);
+            Console.WriteLine(result);
+        }
+        /// <summary>
         /// Display Method
         /// </summary>
         /// <param name="products"></param>

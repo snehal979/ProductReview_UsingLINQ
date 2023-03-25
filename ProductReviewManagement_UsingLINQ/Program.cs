@@ -27,7 +27,7 @@
             try
             {
                 Console.WriteLine("1.Display the ProductReview 2.Retrieve top 3 record 3.AllRecord Greater Than 3, 4.Retrive group by ProductId 5.AllRecordProductId" +
-                    "\n 6.topp five record skip 7.SkipTopRecord_ByRating");
+                    "\n 6.topp five record skip 7.SkipTopRecord_ByRating 8.AVG ");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
                 {
@@ -51,6 +51,9 @@
                         break;
                     case 7:
                         productDataMain.SkipTopRecord_ByRating();
+                        break;
+                    case 8:
+                        productDataMain.AvergaeRating();
                         break;
                 }
             }
