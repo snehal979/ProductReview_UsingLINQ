@@ -44,15 +44,10 @@ namespace ProductReviewManagement_UsingLINQ
                 new DataColumn("IsLike", typeof(bool)),
             };
             productDetailTable.Columns.AddRange(col);
-            //Insert data 
-            InsertInformation();
-            //Display method
-            ShowTable();
         }
         /// <summary>
         /// Uc8 Add data in the table
         /// </summary>
-        /// <param name="productDetailTable"></param>
         public void InsertInformation()
         {
             // Use an Object array to insert all the rows .
@@ -80,7 +75,6 @@ namespace ProductReviewManagement_UsingLINQ
         /// <summary>
         /// Uc9 Retrive data
         /// </summary>
-        /// <param name="table"></param>
         public void ShowTable()
         {
             foreach (DataColumn col in productDetailTable.Columns)
@@ -94,6 +88,20 @@ namespace ProductReviewManagement_UsingLINQ
                 Console.WriteLine("ProductId "+row[0]+" UserId "+row[1]+" Rating "+row[2]+" Review "+row[3]+" IsLike "+row[4]);
             }
         }
-       
+        /// <summary>
+        /// Uc12 Add Data in Table
+        /// </summary>
+        public void AddData()
+        {
+            CreatedDataTable();
+            // Add one row once.
+            DataRow row1 = productDetailTable.NewRow();
+            row1[0] = 12;
+            row1[1] = 12;
+            row1[2] = 4;
+            row1[3] = "Nice";
+            row1[4] = true;
+            productDetailTable.Rows.Add(row1);
+        }
     }
 }

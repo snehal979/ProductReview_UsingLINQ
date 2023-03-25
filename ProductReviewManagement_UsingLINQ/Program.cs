@@ -24,10 +24,11 @@
             ProductDataMain productDataMain = new ProductDataMain();
             productDataMain.Addtional(products);
 
+            DataTableFormat data = new DataTableFormat();
             try
             {
                 Console.WriteLine("1.Display the ProductReview 2.Retrieve top 3 record 3.AllRecord Greater Than 3, 4.Retrive group by ProductId 5.AllRecordProductId" +
-                    "\n 6.topp five record skip 7.SkipTopRecord_ByRating 8.AVG 9.review which contain NICE \n 10.Create table");
+                    "\n 6.topp five record skip 7.SkipTopRecord_ByRating 8.AVG 9.review which contain NICE \n 10.Create table 11.Add Data in Table");
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
                 {
@@ -59,8 +60,13 @@
                         productDataMain.RetriveReviews();
                         break;
                     case 10:
-                        DataTableFormat data = new DataTableFormat();
                         data.CreatedDataTable();
+                        data.InsertInformation();
+                        data.ShowTable();
+                        break;
+                    case 11:
+                        data.AddData();
+                        data.ShowTable();
                         break;
                 }
             }
