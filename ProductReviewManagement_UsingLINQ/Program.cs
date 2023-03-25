@@ -56,7 +56,7 @@
                         productDataMain.AvergaeRating();
                         break;
                     case 9:
-                        productDataMain.RetriveReview();
+                        productDataMain.RetriveReviews();
                         break;
                 }
             }
